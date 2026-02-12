@@ -3,7 +3,7 @@ import { Text, TextInput, Button, View, Alert } from "react-native";
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
 
-const SERVER_URL = "https://YOUR_RENDER_URL";
+const SERVER_URL = "https://train-alert-server.onrender.com";
 
 export default function App() {
   const [train, setTrain] = useState("");
