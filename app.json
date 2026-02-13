@@ -4,9 +4,15 @@
     "slug": "train-alert-app",
     "version": "1.0.0",
     "orientation": "portrait",
+
     "android": {
       "package": "com.train.alert"
     },
+
+    "splash": {
+      "backgroundColor": "#ffffff"
+    },
+
     "extra": {
       "eas": {
         "projectId": "45a01b97-c9a9-4307-b427-48974d081fe9"
