@@ -15,16 +15,25 @@ export default function App() {
   }, []);
 
   async function registerForPush() {
-    if (!Device.isDevice) return;
+    try {
+      if (!Device.isDevice) return;
 
-    const { status } = await Notifications.requestPermissionsAsync();
-    if (status !== "granted") return;
+      const { status } = await Notifications.requestPermissionsAsync();
+      if (status !== "granted") return;
 
-    const tokenData = await Notifications.getExpoPushTokenAsync();
-    setToken(tokenData.data);
+      const tokenData = await Notifications.getExpoPushTokenAsync();
+      setToken(tokenData.data);
+    } catch (e) {
+      console.log("Push error:", e);
+    }
   }
 
   const startTracking = async () => {
+    if (!train || !date) {
+      Alert.alert("Enter train and date");
+      return;
+    }
+
     try {
       await fetch(`${SERVER_URL}/start`, {
         method: "POST",
