@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Train Alert",
-    "slug": "train-alert",
+    "slug": "train-alert-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "android": {
